@@ -13,9 +13,7 @@ bool isvalid(int n,int m,int i,int j){
 }
 
 bool check(string A[],int n,int m,int x,int y,int index){
-    if(index==nn)return true;
-   
-    cout<<s[index]<<" ";
+    if(index>=nn)return true;
     vis[x][y]=1;
     bool found=false;
 
@@ -28,6 +26,7 @@ bool check(string A[],int n,int m,int x,int y,int index){
     }
 
     vis[x][y]=0;
+    return found;
 }
 
 int main(){
@@ -59,11 +58,12 @@ int main(){
     }
 
     cout<<s<<" "<<nn<<" ";
-
+    bool fou=false;
+    
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
             if(A[i][j]=='C'){
-                bool fou=check(A,m,n,i,j,1);
+                fou=check(A,n,m,i,j,1);
                 if(fou==true){cout<<"true";return 0;}
             }
         }
