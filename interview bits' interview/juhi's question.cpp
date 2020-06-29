@@ -19,7 +19,7 @@ int totalarrays(int a[],int n,int m){
   
         // when number of odd elements>=M 
         if (odd >= m) 
-            count += prefix[odd - m]; 
+            count += prefix[odd - m];  
     } 
   
     return count;
